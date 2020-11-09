@@ -94,8 +94,7 @@ public class MainActivity extends AppCompatActivity {
         jobScheduler.schedule(myJobInfo);
 
         //Show a Toast message, letting user know the job was scheduled
-        Toast.makeText(this, "Job Scheduled, job will run when " +
-                "the constraints are met.", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.job_scheduled, Toast.LENGTH_LONG).show();
 
         if (seekBarSet) {
             builder.setOverrideDeadline(seekBarInteger * 1000);
@@ -106,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         if (jobScheduler != null) {
             jobScheduler.cancelAll();
             jobScheduler = null;
-            Toast.makeText(this, "Jobs cancelled", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.job_cancelled, Toast.LENGTH_LONG).show();
         }
     }
 }

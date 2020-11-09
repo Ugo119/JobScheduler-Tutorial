@@ -15,6 +15,7 @@ import androidx.core.app.NotificationManagerCompat;
 public class NotificationJobService extends JobService {
     NotificationManager notificationManager;
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
+
     @Override
     public boolean onStartJob(JobParameters params) {
         //Create the notification channel
@@ -45,13 +46,13 @@ public class NotificationJobService extends JobService {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //Create the NotificationChannel with all the parameters.
             NotificationChannel notificationChannel = new NotificationChannel
-                    (PRIMARY_CHANNEL_ID, "Job Service notification",
+                    (PRIMARY_CHANNEL_ID, getString(R.string.job_service_notification),
                             NotificationManager.IMPORTANCE_HIGH);
 
             notificationChannel.enableLights(Boolean.TRUE);
             notificationChannel.setLightColor(Color.RED);
             notificationChannel.enableVibration(Boolean.TRUE);
-            notificationChannel.setDescription("Notifications from Job Service");
+            notificationChannel.setDescription(getString(R.string.notification_channel_description));
 
             notificationManager.createNotificationChannel(notificationChannel);
         }

@@ -2,4 +2,8 @@
     <string name="app_name">Notification Scheduler</string>
     <string name="job_service_content_title">Job Service</string>
     <string name="job_service_content_text">Your Job ran to completion!</string>
+    <string name="job_scheduled">Job Scheduled, job will run when the constraints are met.</string>
+    <string name="job_cancelled">Jobs cancelled</string>
+    <string name="job_service_notification">Job Service notification</string>
+    <string name="notification_channel_description">Notifications from Job Service</string>
 </resources>

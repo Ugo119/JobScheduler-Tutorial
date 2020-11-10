@@ -84,13 +84,14 @@ public class MainActivity extends AppCompatActivity {
         ComponentName serviceName = new ComponentName(getPackageName(),
                 NotificationJobService.class.getName());
 
-        //Create a JobInfo object
+        //Create a JobInfo.Builder object
         JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName)
                 .setRequiredNetworkType(selectedNetworkOption)
                 .setRequiresDeviceIdle(deviceIdleSwitch.isChecked())
                 .setRequiresCharging(deviceChargingSwitch.isChecked());
-        //Schedule the job and notify the user
+        //Create a JobInfo object
         JobInfo myJobInfo = builder.build();
+        //Schedule the job and notify the user
         jobScheduler.schedule(myJobInfo);
 
         //Show a Toast message, letting user know the job was scheduled
